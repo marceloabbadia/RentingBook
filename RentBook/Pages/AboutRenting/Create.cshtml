@@ -1,0 +1,50 @@
+﻿@page
+@model RentBook.Pages.AboutRenting.CreateModel
+
+        @{
+        ViewData["Title"] = "Create";
+        }
+        
+        <h1>Create</h1>
+        
+    <h4>Renting</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Renting.RentedAt" class="control-label"></label>
+                <input asp-for="Renting.RentedAt" class="form-control" />
+                <span asp-validation-for="Renting.RentedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Renting.ReturnedAt" class="control-label"></label>
+                <input asp-for="Renting.ReturnedAt" class="form-control" />
+                <span asp-validation-for="Renting.ReturnedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Renting.BookId" class="control-label"></label>
+                <select asp-for="Renting.BookId" class ="form-control" asp-items="ViewBag.BookId"></select>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Renting.UserId" class="control-label"></label>
+                <select asp-for="Renting.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

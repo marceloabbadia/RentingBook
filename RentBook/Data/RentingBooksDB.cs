@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RentBook.Data.Entities;
 
 namespace RentBook.Data
 {
@@ -10,5 +11,9 @@ namespace RentBook.Data
         {
 
         }
+
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Renting> Rentings { get; set; }
     }
 }
